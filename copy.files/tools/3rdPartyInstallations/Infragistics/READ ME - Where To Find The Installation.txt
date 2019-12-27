@@ -1,8 +1,0 @@
-
-Due to the large size of the complete installation we
-will just point to the location of the actual installation
-files that you can obtain by going to:
-
-N:\vestek\napa\software\Infragistics\NetAdvantage 2003 Vol.1 Full Release\netadvantage31.zip
-
-where the N: drive is \\guido\data2

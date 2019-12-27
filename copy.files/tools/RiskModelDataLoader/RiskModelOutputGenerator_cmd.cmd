@@ -1,1 +1,0 @@
-Powershell -file D:\RiskModelScript.ps1 > d:\logs\log.txt
