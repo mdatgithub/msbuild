@@ -1,0 +1,44 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Import Project="tools\Microsoft.Sdc.Tasks\Microsoft.Sdc.Common.Tasks" />
+	<Import Project="tools\MSBuild.Community.Tasks\MSBuild.Community.Tasks.Targets" />
+ 	<Import Project="tools\MSBuild.ExtensionPack\MSBuild.ExtensionPack.tasks" />
+
+
+	<PropertyGroup>
+	    <FileVersion>22.2</FileVersion>
+	</PropertyGroup>
+
+    <ItemGroup>
+        <MySourceFiles Include="*.xml"/>
+    </ItemGroup>
+
+    <Target Name="CopyFiles">
+        <Copy
+            SourceFiles="@(MySourceFiles)"
+            DestinationFiles="@(MySourceFiles->'release\%(Filename).$(FileVersion)%(Extension)')"
+        />
+        
+        <!--
+        <ItemGroup>
+		        <MyDestinationFiles Include="release\*.$(FileVersion).xml"/>
+    	</ItemGroup>
+    	-->
+    	
+    	<CreateItem Include="release\*.$(FileVersion).xml">
+    	  <Output TaskParameter="Include" ItemName="MyDestinationFiles1" />
+    	</CreateItem>    	
+                
+    	<CreateItem Include="release\*.$(FileVersion).xml">
+    	  <Output TaskParameter="Include" ItemName="MyDestinationFiles2" />
+    	</CreateItem>  
+                
+                
+		<XmlUpdate XmlFileName="@(MyDestinationFiles2)" XPath="//release/@version" Value="$(FileVersion)" />
+        
+    </Target>
+
+
+	
+
+</Project>

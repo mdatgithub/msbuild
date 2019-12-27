@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<release name="#CCNETPROJ#: #APPLICATION#. ASAP Application Servers." version="#VERSION#.#BUILDNUM#" type="Major" format="2.0">
+  <application>Eikon_Portfolio_Analytics</application>
+    <template>ASAPService Deployment</template>
+    <server-type name="ASAP Servers">
+        <artifact url="SAMI-BIN/Releases/Mount17/topas_buildbinaries/CI/#CCNETPROJ#/#CCNETPROJ#.#VERSION#/#APPLICATION#.#VERSION#.#BUILDNUM#.0.zip" md5="#MD5#" parameter="Deployment/Deploy/ZipFile"/>
+    </server-type>
+</release>
